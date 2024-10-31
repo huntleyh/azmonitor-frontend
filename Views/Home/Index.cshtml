@@ -1,0 +1,25 @@
+﻿@model IEnumerable<front_end_ui.Models.Dog>
+
+@{
+    ViewData["Title"] = "Fur-ever Friends";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Fur Pals Adoption</h1>
+    <p>This is a sample pet adoption site to show available pets for adoption.</p>
+</div>
+
+<div class="row">
+    @foreach (var dog in Model)
+    {
+        <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+                <img src=@string.Format("~/assets/pic{0}.jpg", @dog.Id) class="card-img-top" alt="@dog.Name">
+                <div class="card-body">
+                    <h5 class="card-title">@dog.Name</h5>
+                    <p class="card-text">Description: @dog.Description</p>
+                </div>
+            </div>
+        </div>
+    }
+</div>
